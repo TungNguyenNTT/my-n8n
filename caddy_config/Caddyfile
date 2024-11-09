@@ -6,7 +6,7 @@ n8n.tungnguyenai.com {
 
 qdrant.tungnguyenai.com {
   # TLS configuration for Qdrant
-  tls /qdrant/config/cert.pem /qdrant/config/key.pem
+  tls ./qdrant_cert.pem ./qdrant_key.pem
 
   # Reverse proxy for Qdrant
   reverse_proxy 165.22.60.8:6334
