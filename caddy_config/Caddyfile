@@ -3,3 +3,9 @@ n8n.tungnguyenai.com {
       flush_interval -1
     }
 }
+
+qdrant.tungnguyenai.com {
+  reverse_proxy 165.22.60.8:6334 {
+    tls /qdrant/config/cert.pem /qdrant/config/key.pem
+  }
+}
