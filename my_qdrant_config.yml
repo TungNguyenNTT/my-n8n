@@ -2,5 +2,5 @@ service:
   enable_tls: true
   api_key: "123"
 tls:
-  cert: qdrant_cert.pem
-  key: qdrant_key.pem
+  cert: ./qdrant_cert.pem
+  key: ./qdrant_key.pem
