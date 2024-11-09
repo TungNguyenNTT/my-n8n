@@ -8,7 +8,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - caddy_data:/data
+      - my_caddy_data:/data
       - ${DATA_FOLDER}/caddy_config:/config
       - ${DATA_FOLDER}/caddy_config/Caddyfile:/etc/caddy/Caddyfile
 
@@ -25,11 +25,11 @@ services:
       - WEBHOOK_URL=https://${SUBDOMAIN}.${DOMAIN_NAME}/
       - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
     volumes:
-      - n8n_data:/home/node/.n8n
+      - my_n8n_data:/home/node/.n8n
       - ${DATA_FOLDER}/local_files:/files
       
 volumes:
-  caddy_data:
+  my_caddy_data:
     external: true
-  n8n_data:
+  my_n8n_data:
     external: true
