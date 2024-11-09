@@ -36,7 +36,7 @@ services:
       - 6333:6333
     volumes:
       - my_qdrant_storage:/qdrant/storage
-      - ${DATA_FOLDER}/my_qdrant_config.yml: /qdrant/config/production.yaml
+      - ${DATA_FOLDER}/my_qdrant_config.yml:/qdrant/config/production.yaml
 
 volumes:
   my_caddy_data:
