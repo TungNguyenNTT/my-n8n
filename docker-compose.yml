@@ -26,6 +26,8 @@ services:
       - NODE_ENV=production
       - WEBHOOK_URL=https://${SUBDOMAIN}.${DOMAIN_NAME}/
       - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
+      - QDRANT_HOST=qdrant.${DOMAIN_NAME}
+      - QDRANT_PORT=6333
     volumes:
       - my_n8n_data:/home/node/.n8n
       - ${DATA_FOLDER}/local_files:/files
@@ -41,6 +43,10 @@ services:
       - ${DATA_FOLDER}/qdrant_cert.pem:/qdrant/config/cert.pem
       - ${DATA_FOLDER}/qdrant_key.pem:/qdrant/config/key.pem
       - /home/tungnguyenai/my-n8n:/home/tungnguyenai/my-n8n
+
+networks:
+  default:
+    driver: bridge
 
 volumes:
   my_caddy_data:
