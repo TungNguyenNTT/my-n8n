@@ -27,7 +27,7 @@ services:
       - NODE_ENV=production
       - WEBHOOK_URL=https://${SUBDOMAIN}.${DOMAIN_NAME}/
       - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
-      - QDRANT_HOST=https://qdrant.tungnguyenai.com
+      - QDRANT_HOST=https://qdrant:6333
       - QDRANT_PORT=6333
       - NODE_EXTRA_CA_CERTS=/files/qdrant_cert.pem  # Add this line
     volumes:
