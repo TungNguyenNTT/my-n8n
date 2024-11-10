@@ -53,6 +53,7 @@ services:
 
 networks:
   app-network:
+    name: app-network  # Explicitly set the network name
     driver: bridge
 
 volumes:
