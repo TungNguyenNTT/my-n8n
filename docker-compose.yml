@@ -39,6 +39,7 @@ services:
       - ${DATA_FOLDER}/my_qdrant_config.yml:/qdrant/config/production.yaml
       - ${DATA_FOLDER}/qdrant_cert.pem:/qdrant/config/cert.pem
       - ${DATA_FOLDER}/qdrant_key.pem:/qdrant/config/key.pem
+      - /home/tungnguyenai/my-n8n:/home/tungnguyenai/my-n8n
 
 volumes:
   my_caddy_data:
