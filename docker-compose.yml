@@ -11,6 +11,7 @@ services:
       - my_caddy_data:/data
       - ${DATA_FOLDER}/caddy_config:/config
       - ${DATA_FOLDER}/caddy_config/Caddyfile:/etc/caddy/Caddyfile
+      - /home/tungnguyenai/my-n8n:/home/tungnguyenai/my-n8n
 
   n8n:
     image: docker.n8n.io/n8nio/n8n
