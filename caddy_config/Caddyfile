@@ -1,7 +1,8 @@
 n8n.tungnguyenai.com {
-    reverse_proxy n8n:5678 {
-      flush_interval -1
-    }
+  tls /etc/letsencrypt/live/n8n.tungnguyenai.com/fullchain.pem /etc/letsencrypt/live/n8n.tungnguyenai.com/privkey.pem
+  reverse_proxy n8n:5678 {
+    flush_interval -1
+  }
 }
 
 qdrant.tungnguyenai.com {
