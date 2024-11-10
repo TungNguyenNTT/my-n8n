@@ -28,7 +28,7 @@ services:
       - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
       - QDRANT_HOST=https://qdrant.tungnguyenai.com
       - QDRANT_PORT=6333
-      - NODE_EXTRA_CA_CERTS=/files/qdrant_cert.pem
+
     volumes:
       - my_n8n_data:/home/node/.n8n
       - ${DATA_FOLDER}/local_files:/files
