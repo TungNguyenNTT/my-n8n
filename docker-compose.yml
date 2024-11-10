@@ -27,7 +27,7 @@ services:
       - NODE_ENV=production
       - WEBHOOK_URL=https://${SUBDOMAIN}.${DOMAIN_NAME}/
       - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
-      - QDRANT_HOST=qdrant
+      - QDRANT_HOST=https://qdrant.tungnguyenai.com  # Add this line
       - QDRANT_PORT=6333
       - NODE_EXTRA_CA_CERTS=/files/qdrant_cert.pem  # Add this 
       - N8N_DIAGNOSTICS_ENABLED=true  # Add this line
@@ -42,10 +42,12 @@ services:
   qdrant:
     image: qdrant/qdrant
     restart: unless-stopped
-    expose:
-      - 6333
+    environment:
+      - QDRANT_ALLOW_GRPC=true
+      - QDRANT_ALLOW_HTTP=true
     ports:
-      - 6333:6333
+      - "6333:6333"
+      - "6334:6334"
     volumes:
       - my_qdrant_storage:/qdrant/storage
       - ${DATA_FOLDER}/my_qdrant_config.yml:/qdrant/config/production.yaml
